@@ -191,7 +191,7 @@ img {
   position: absolute;
   inset: 0;
   z-index: -3;
-  background-image: url("assets/hero-caviar.png");
+  background-image: url("assets/caviar/DJI_0281.jpg");
   background-position: center;
   background-size: cover;
   transform: scale(1.02);
@@ -447,6 +447,10 @@ h2 {
   color: var(--gold-light);
   font-size: clamp(2rem, 4vw, 3.55rem);
   line-height: 0.95;
+}
+
+.impact-stat:last-child strong {
+  font-size: clamp(1.2rem, 3.5vw, 3.2rem);
 }
 
 .impact-stat span:last-child {
@@ -765,78 +769,15 @@ h2 {
   min-height: 220px;
 }
 
-.portfolio-media::before,
-.portfolio-media::after,
-.case-media::before,
-.case-media::after {
-  position: absolute;
-  content: "";
-  border: 1px solid rgba(244, 217, 149, 0.24);
-  border-radius: 8px;
-}
-
-.portfolio-media::before,
-.case-media::before {
-  inset: 18px;
-}
-
-.portfolio-media::after,
-.case-media::after {
-  inset: auto 24px 24px auto;
-  width: 34%;
-  height: 38%;
-  background: rgba(201, 151, 74, 0.12);
-}
-
-.portfolio-media > span,
-.case-media > span {
-  position: absolute;
-  inset: 34px auto auto 34px;
-  width: 38%;
-  height: 28%;
-  border: 1px solid rgba(244, 217, 149, 0.32);
-  border-radius: 8px;
-  background: rgba(201, 151, 74, 0.08);
-}
-
-.placeholder-video {
-  display: grid;
-  place-items: center;
-}
-
-.placeholder-video .play-mark {
-  position: relative;
-  width: 58px;
-  height: 58px;
-  border: 1px solid rgba(244, 217, 149, 0.5);
-  border-radius: 50%;
-  background: rgba(201, 151, 74, 0.14);
-}
-
-.placeholder-video .play-mark::after {
-  position: absolute;
-  top: 18px;
-  left: 22px;
-  width: 0;
-  height: 0;
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
-  border-left: 16px solid var(--gold-light);
-  content: "";
-}
-
-.placeholder-lines {
-  background:
-    repeating-linear-gradient(90deg, rgba(201, 151, 74, 0.12) 0 1px, transparent 1px 26px),
-    linear-gradient(135deg, rgba(201, 151, 74, 0.2), rgba(5, 5, 5, 0.08)),
-    #090806;
-}
-
-.placeholder-experience {
-  background:
-    repeating-linear-gradient(135deg, rgba(244, 217, 149, 0.1) 0 2px, transparent 2px 22px),
-    linear-gradient(145deg, rgba(201, 151, 74, 0.2), rgba(5, 5, 5, 0.1)),
-    #090806;
+.portfolio-media img,
+.portfolio-media video,
+.case-media img,
+.case-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
 }
 
 .portfolio-card-copy {
@@ -952,7 +893,7 @@ h2 {
 .method-step span {
   display: block;
   margin-bottom: 28px;
-  font-size: clamp(1.4rem, 3vw, 2.35rem);
+  font-size: clamp(1.1rem, 1.45vw, 1.38rem);
   font-weight: 800;
   line-height: 1;
 }
@@ -1412,6 +1353,24 @@ h2 {
   .service-card {
     min-height: 260px;
   }
+
+  .method-step span {
+    font-size: clamp(1.4rem, 3vw, 2.35rem);
+  }
+}
+
+@media (min-width: 921px) and (max-width: 1280px) {
+  .method-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .method-step::after {
+    display: none;
+  }
+
+  .method-step span {
+    font-size: clamp(1.4rem, 3vw, 2.35rem);
+  }
 }
 
 @media (max-width: 640px) {
@@ -1540,6 +1499,10 @@ h2 {
   .eyebrow,
   .section-kicker {
     font-size: 0.72rem;
+  }
+
+  .impact-stat span:last-child {
+    font-size: 0.84rem;
   }
 
   .hero-copy {
